@@ -39,7 +39,7 @@ with open(csvpath, encoding='UTF-8') as csvfile:
 
     # Creating txt file and redirecting output to it
     old_print = print
-    log_file = open("output.txt", "w")
+    log_file = open(os.path.join(os.getcwd(),"analysis", "output.txt"), "w")
     print = lambda *args, **kw: old_print(*args, **kw) or old_print(*args, file=log_file, **kw)
     
     # Displaying results    
